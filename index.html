@@ -115,6 +115,84 @@
       -moz-appearance: textfield;
     }
 
+    /* MEDIA QUERIES: Responsividade para celulares e tablets */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  header .brand {
+    flex-direction: column;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prices {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .price-card h3 {
+    font-size: 16px;
+  }
+
+  .price-card .amount {
+    font-size: 18px;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step .num {
+    margin-bottom: 6px;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -281,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isNaN(robux) && robux > 0) {
       // Preços por Robux
       const precoGrupo = 0.027;
-      const precoNormal = precoGrupo * 1.10; // 10% mais caro
+      const precoNormal = precoGrupo * 1.30; // 10% mais caro
 
       // Cálculo dos valores
       const valorGrupo = (robux * precoGrupo).toFixed(2).replace('.', ',');
